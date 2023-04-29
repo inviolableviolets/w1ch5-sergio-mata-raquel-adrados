@@ -43,7 +43,7 @@ $secondary-font: "Rubik", sans-serif;
     "head"
     "title"
     "form";
-  height: 150vh;
+  height: 135vh;
 }
 
 header {
@@ -151,10 +151,126 @@ header {
       justify-self: end;
     }
   }
+}
 
-  @media (min-width: 620px) {
-    .main__title {
-      color: red;
+@media (min-width: 1092px) {
+  .hero-section {
+    height: 100vh;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header__logo {
+      display: grid;
+      & img {
+        height: 2.5rem;
+      }
+    }
+
+    .header__nav--mobile {
+      display: none;
+    }
+
+    .header__nav--desktop {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-family: $secondary-font;
+      color: white;
+
+      & a {
+        color: inherit;
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
+
+      .active {
+        text-decoration: underline 0.2rem;
+        text-underline-offset: 0.5rem;
+        text-decoration-color: $primary-color;
+      }
+    }
+
+    .header__login {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-right: 2rem;
+      font-family: $secondary-font;
+      color: white;
+
+      & a {
+        display: flex;
+        color: inherit;
+        font-size: 1.25rem;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .sign-up {
+        background-color: #ff7757;
+        border-radius: 12px;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        padding-bottom: 1rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  .main__title {
+    display: grid;
+    grid-area: title;
+    margin-top: 4rem;
+
+    h1 {
+      font-size: 5.2rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .main__form {
+    margin-top: 4rem;
+    width: 86%;
+    border-radius: 0px 1rem 1rem 0px;
+    display: flex;
+    justify-content: space-between;
+
+    .form__destination {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__person {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__check-in {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__check-out {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__book {
+      display: flex;
+      flex-direction: row;
+      border-radius: 0px 1rem 1rem 0px;
+      gap: 1rem;
     }
   }
 }
