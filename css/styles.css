@@ -1,3 +1,382 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Playfair Display", serif;
+  min-width: 320px;
+}
+
+.hero-section {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1597339801934-bfb6a88b0010?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem 1rem 6rem 1rem;
+  grid-template-areas: "head" "title" "form";
+  height: 135vh;
+}
+
+header {
+  display: grid;
+  grid-area: head;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  align-items: center;
+}
+header .header__nav--desktop {
+  display: none;
+}
+header .header__login {
+  display: none;
+}
+header .header__nav--mobile {
+  padding-right: 2rem;
+}
+
+.main__title {
+  display: grid;
+  grid-area: title;
+  color: white;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.main__title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.main__title p {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+
+.main__form {
+  display: grid;
+  grid-area: form;
+  background: white;
+  border-radius: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.87rem;
+  gap: 1rem;
+  grid-template-areas: "destination" "person" "check-in" "check-out" "book";
+}
+.main__form .form__destination {
+  grid-area: destination;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem 1rem 0 1rem;
+}
+.main__form .form__destination input {
+  font-family: "Playfair Display", serif;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.main__form .form__person {
+  grid-area: person;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem 1rem 0 1rem;
+}
+.main__form .form__person input {
+  font-family: "Playfair Display", serif;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.main__form .form__check-in {
+  grid-area: check-in;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem 1rem 0 1rem;
+}
+.main__form .form__check-in input {
+  font-family: "Playfair Display", serif;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.main__form .form__check-out {
+  grid-area: check-out;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem 1rem 0 1rem;
+  padding-bottom: 2rem;
+}
+.main__form .form__check-out input {
+  font-family: "Playfair Display", serif;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.main__form .form__book {
+  background-color: #ff7757;
+  grid-area: book;
+  border-radius: 0px 0px 16px 16px;
+  display: grid;
+  align-items: center;
+  font-size: 2.25rem;
+  font-family: "Playfair Display", serif;
+  color: white;
+  font-weight: 400;
+  justify-items: stretch;
+  grid-auto-flow: column;
+  padding: 2.5rem 1rem;
+}
+.main__form .form__book label {
+  justify-self: start;
+}
+.main__form .form__book input {
+  position: absolute;
+  visibility: hidden;
+}
+.main__form .form__book img {
+  width: 2rem;
+  justify-self: end;
+}
+
+@media (min-width: 1092px) {
+  .hero-section {
+    height: 100vh;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header .header__logo {
+    display: grid;
+  }
+  header .header__logo img {
+    height: 2.5rem;
+  }
+  header .header__nav--mobile {
+    display: none;
+  }
+  header .header__nav--desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    font-family: "Rubik", sans-serif;
+    color: white;
+  }
+  header .header__nav--desktop a {
+    color: inherit;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  header .header__nav--desktop .active {
+    text-decoration: underline 0.2rem;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: #ff7757;
+  }
+  header .header__login {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-right: 2rem;
+    font-family: "Rubik", sans-serif;
+    color: white;
+  }
+  header .header__login a {
+    display: flex;
+    color: inherit;
+    font-size: 1.25rem;
+    align-items: center;
+    text-decoration: none;
+  }
+  header .header__login .sign-up {
+    background-color: #ff7757;
+    border-radius: 12px;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  .main__title {
+    display: grid;
+    grid-area: title;
+    margin-top: 4rem;
+  }
+  .main__title h1 {
+    font-size: 5.2rem;
+  }
+  .main__title p {
+    font-size: 1.5rem;
+  }
+  .main__form {
+    margin-top: 4rem;
+    width: 86%;
+    border-radius: 0px 1rem 1rem 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main__form .form__destination {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .main__form .form__person {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .main__form .form__check-in {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .main__form .form__check-out {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .main__form .form__book {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px 1rem 1rem 0px;
+    gap: 1rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

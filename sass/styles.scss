@@ -1,3 +1,276 @@
 @use "reset";
 @use "global";
 @use "responsive";
+
+$primary-color: #ff7757;
+$black: #172432;
+$subtitle-color: #767e86;
+$newsletter-background: #ffe8d4;
+$experiences-background: #f5f6f7;
+$offer-background: #fff8f1;
+$primary-font: "Playfair Display", serif;
+$secondary-font: "Rubik", sans-serif;
+
+@mixin background($url) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(#{$url});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@mixin form-input() {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem 1rem 0 1rem;
+  & input {
+    font-family: $primary-font;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+}
+
+.hero-section {
+  @include background(
+    "https://images.unsplash.com/photo-1597339801934-bfb6a88b0010?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80"
+  );
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem 1rem 6rem 1rem;
+  grid-template-areas:
+    "head"
+    "title"
+    "form";
+  height: 135vh;
+}
+
+header {
+  display: grid;
+  grid-area: head;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  align-items: center;
+
+  .header__nav--desktop {
+    display: none;
+  }
+
+  .header__login {
+    display: none;
+  }
+
+  .header__nav--mobile {
+    padding-right: 2rem;
+  }
+}
+
+.main__title {
+  display: grid;
+  grid-area: title;
+  color: white;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  & h1 {
+    font-family: $primary-font;
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+
+  & p {
+    font-family: $secondary-font;
+    font-size: 1.12rem;
+    font-weight: 400;
+    margin: 2rem 0;
+  }
+}
+
+.main__form {
+  display: grid;
+  grid-area: form;
+  background: white;
+  border-radius: 1rem;
+  font-family: $secondary-font;
+  font-size: 0.87rem;
+  gap: 1rem;
+  grid-template-areas:
+    "destination"
+    "person"
+    "check-in"
+    "check-out"
+    "book";
+
+  .form__destination {
+    grid-area: destination;
+    @include form-input();
+  }
+
+  .form__person {
+    grid-area: person;
+    @include form-input();
+  }
+
+  .form__check-in {
+    grid-area: check-in;
+    @include form-input();
+  }
+
+  .form__check-out {
+    grid-area: check-out;
+    @include form-input();
+    padding-bottom: 2rem;
+  }
+
+  .form__book {
+    background-color: #ff7757;
+    grid-area: book;
+    border-radius: 0px 0px 16px 16px;
+    display: grid;
+    align-items: center;
+    font-size: 2.25rem;
+    font-family: $primary-font;
+    color: #ffff;
+    font-weight: 400;
+    justify-items: stretch;
+    grid-auto-flow: column;
+    padding: 2.5rem 1rem;
+
+    & label {
+      justify-self: start;
+    }
+
+    & input {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    & img {
+      width: 2rem;
+      justify-self: end;
+    }
+  }
+}
+
+@media (min-width: 1092px) {
+  .hero-section {
+    height: 100vh;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header__logo {
+      display: grid;
+      & img {
+        height: 2.5rem;
+      }
+    }
+
+    .header__nav--mobile {
+      display: none;
+    }
+
+    .header__nav--desktop {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-family: $secondary-font;
+      color: white;
+
+      & a {
+        color: inherit;
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
+
+      .active {
+        text-decoration: underline 0.2rem;
+        text-underline-offset: 0.5rem;
+        text-decoration-color: $primary-color;
+      }
+    }
+
+    .header__login {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-right: 2rem;
+      font-family: $secondary-font;
+      color: white;
+
+      & a {
+        display: flex;
+        color: inherit;
+        font-size: 1.25rem;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .sign-up {
+        background-color: #ff7757;
+        border-radius: 12px;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        padding-bottom: 1rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  .main__title {
+    display: grid;
+    grid-area: title;
+    margin-top: 4rem;
+
+    h1 {
+      font-size: 5.2rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .main__form {
+    margin-top: 4rem;
+    width: 86%;
+    border-radius: 0px 1rem 1rem 0px;
+    display: flex;
+    justify-content: space-between;
+
+    .form__destination {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__person {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__check-in {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__check-out {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form__book {
+      display: flex;
+      flex-direction: row;
+      border-radius: 0px 1rem 1rem 0px;
+      gap: 1rem;
+    }
+  }
+}
