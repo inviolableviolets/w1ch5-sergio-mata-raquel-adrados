@@ -18,7 +18,7 @@
       <div class="header__logo">
         <img src="/images/icons/word.svg" alt="Travellian logo">
       </div>
-      <nav>
+      <nav class="header__nav">
         <div class="header__nav header__nav--mobile">
           <img src="/images/icons/hamburger.svg" alt="Nav icon">
         </div>
@@ -35,6 +35,35 @@
         <a href="#" id="sign">Sign Up</a>
       </div>
     </header>
+    <main>
+      <section class="main__title">
+        <h1>Start your unforgettable journey with us.</h1>
+        <p>The best travel for your journey begins now</p>
+      </section>
+      <form action="#" class="main__form">
+        <div class="form__label">
+          <label for="destination">DESTINATION</label>
+          <input placeholder="Dubai" type="text" id="destination">
+        </div>
+        <div class="form__person">
+          <label for="person">PERSON</label>
+          <input placeholder="2" type="text" id="person">
+        </div>
+        <div class="form__check-in">
+          <label for="check-in">CHECK IN</label>
+          <input placeholder="Sun, 17th Sep 2020" type="text" id="check-in">
+        </div>
+        <div class="form__checkout">
+          <label for="check-out">CHECK OUT</label>
+          <input placeholder="Tue,17th Oct 2020" type="text" id="check-out">
+        </div>
+        <div class="form__book">
+          <label for="book-now">Book Now</label>
+          <input type="submit" name="book-now" id="book-now">
+          <img src="./images/icons/arrow.svg" alt="arrow" class="arrow">
+        </div>
+      </form>
+    </main>
   </div>
 </body>
 

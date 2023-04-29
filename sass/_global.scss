@@ -4,7 +4,6 @@ $subtitle-color: #767e86;
 $newsletter-background: #ffe8d4;
 $experiences-background: #f5f6f7;
 $offer-background: #fff8f1;
-
 $primary-font: "Playfair Display", serif;
 $secondary-font: "Rubik", sans-serif;
 
@@ -14,12 +13,8 @@ $secondary-font: "Rubik", sans-serif;
 
 html,
 body {
-  font-family: "Courier New", Courier, monospace;
   font-family: $primary-font;
   min-width: 320px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("https://images.unsplash.com/photo-1597339801934-bfb6a88b0010?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80");
-  background-size: cover;
 }
 
 @mixin mobile {
