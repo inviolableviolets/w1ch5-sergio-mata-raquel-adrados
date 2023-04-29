@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+$primary-color: #ff7757;
+$black: #172432;
+$subtitle-color: #767e86;
+$newsletter-background: #ffe8d4;
+$experiences-background: #f5f6f7;
+$offer-background: #fff8f1;
+
+$primary-font: "Playfair Display", serif;
+$secondary-font: "Rubik", sans-serif;
 
 * {
   box-sizing: border-box;
@@ -6,8 +14,31 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-family: "Nunito";
+  font-family: "Courier New", Courier, monospace;
+  font-family: $primary-font;
   min-width: 320px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1597339801934-bfb6a88b0010?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80");
+  background-size: cover;
+}
+
+@mixin mobile {
+  @media only screen and (min-width: #{$breakpoint_mobile}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$breakpoint_desktop}) {
+    @content;
+  }
+}
+
+@function rem($pxValue) {
+  @return #{calc(stripUnit($pxValue) / stripUnit(16))}rem;
+}
+
+@function rem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
 }
