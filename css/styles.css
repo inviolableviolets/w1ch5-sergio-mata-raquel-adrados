@@ -274,5 +274,10 @@ header .header__nav--mobile {
   width: 2rem;
   justify-self: end;
 }
+@media (min-width: 620px) {
+  .main__form .main__title {
+    color: red;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

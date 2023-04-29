@@ -151,4 +151,10 @@ header {
       justify-self: end;
     }
   }
+
+  @media (min-width: 620px) {
+    .main__title {
+      color: red;
+    }
+  }
 }
