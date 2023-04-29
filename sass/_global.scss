@@ -1,19 +1,10 @@
-$primary-color: #ff7757;
-$black: #172432;
-$subtitle-color: #767e86;
-$newsletter-background: #ffe8d4;
-$experiences-background: #f5f6f7;
-$offer-background: #fff8f1;
-$primary-font: "Playfair Display", serif;
-$secondary-font: "Rubik", sans-serif;
-
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  font-family: $primary-font;
+  font-family: "Playfair Display", serif;
   min-width: 320px;
 }
 
@@ -27,13 +18,4 @@ body {
   @media only screen and (min-width: #{$breakpoint_desktop}) {
     @content;
   }
-}
-
-@function rem($pxValue) {
-  @return #{calc(stripUnit($pxValue) / stripUnit(16))}rem;
-}
-
-@function rem($value) {
-  $remValue: calc($value / 16) + rem;
-  @return $remValue;
 }
