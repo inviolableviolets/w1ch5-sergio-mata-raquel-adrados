@@ -147,46 +147,44 @@ body {
   grid-template-columns: 1fr;
   padding: 2rem 1rem 6rem 1rem;
   grid-template-areas: "head" "title" "form";
-  height: 135vh;
+  height: auto;
 }
-
-header {
+.hero-section .hero__header {
   display: grid;
   grid-area: head;
   grid-template-columns: 1fr 1fr;
   justify-items: end;
   align-items: center;
 }
-header .header__nav--desktop {
+.hero-section .hero__header .header__nav--desktop {
   display: none;
 }
-header .header__login {
+.hero-section .hero__header .header__login {
   display: none;
 }
-header .header__nav--mobile {
+.hero-section .hero__header .header__nav--mobile {
   padding-right: 2rem;
 }
-
-.main__title {
+.hero-section .main__title {
   display: grid;
   grid-area: title;
   color: white;
   gap: 1rem;
   margin-top: 2rem;
 }
-.main__title h1 {
+.hero-section .main__title h1 {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 400;
+  line-height: 4rem;
 }
-.main__title p {
+.hero-section .main__title h2 {
   font-family: "Rubik", sans-serif;
-  font-size: 1.12rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
 }
-
-.main__form {
+.hero-section .main__form {
   display: grid;
   grid-area: form;
   background: white;
@@ -196,60 +194,59 @@ header .header__nav--mobile {
   gap: 1rem;
   grid-template-areas: "destination" "person" "check-in" "check-out" "book";
 }
-.main__form .form__destination {
+.hero-section .main__form .form__destination {
   grid-area: destination;
   display: flex;
   flex-flow: column wrap;
   padding: 1rem 1rem 0 1rem;
 }
-.main__form .form__destination input {
+.hero-section .main__form .form__destination input {
   font-family: "Playfair Display", serif;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #172432;
 }
-.main__form .form__person {
+.hero-section .main__form .form__person {
   grid-area: person;
   display: flex;
   flex-flow: column wrap;
   padding: 1rem 1rem 0 1rem;
 }
-.main__form .form__person input {
+.hero-section .main__form .form__person input {
   font-family: "Playfair Display", serif;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #172432;
 }
-.main__form .form__check-in {
+.hero-section .main__form .form__check-in {
   grid-area: check-in;
   display: flex;
   flex-flow: column wrap;
   padding: 1rem 1rem 0 1rem;
 }
-.main__form .form__check-in input {
+.hero-section .main__form .form__check-in input {
   font-family: "Playfair Display", serif;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #172432;
 }
-.main__form .form__check-out {
+.hero-section .main__form .form__check-out {
   grid-area: check-out;
   display: flex;
   flex-flow: column wrap;
   padding: 1rem 1rem 0 1rem;
-  padding-bottom: 2rem;
 }
-.main__form .form__check-out input {
+.hero-section .main__form .form__check-out input {
   font-family: "Playfair Display", serif;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #172432;
 }
-.main__form .form__book {
+.hero-section .main__form .form__book {
   background-color: #ff7757;
   grid-area: book;
   border-radius: 0px 0px 16px 16px;
@@ -263,37 +260,33 @@ header .header__nav--mobile {
   grid-auto-flow: column;
   padding: 2.5rem 1rem;
 }
-.main__form .form__book label {
+.hero-section .main__form .form__book label {
   justify-self: start;
 }
-.main__form .form__book input {
+.hero-section .main__form .form__book input {
   position: absolute;
   visibility: hidden;
 }
-.main__form .form__book img {
+.hero-section .main__form .form__book img {
   width: 2rem;
   justify-self: end;
 }
-
 @media (min-width: 1092px) {
-  .hero-section {
-    height: 100vh;
-  }
-  header {
+  .hero-section .hero__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  header .header__logo {
+  .hero-section .hero__header .header__logo {
     display: grid;
   }
-  header .header__logo img {
+  .hero-section .hero__header .header__logo img {
     height: 2.5rem;
   }
-  header .header__nav--mobile {
+  .hero-section .hero__header .header__nav--mobile {
     display: none;
   }
-  header .header__nav--desktop {
+  .hero-section .hero__header .header__nav--desktop {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -302,17 +295,17 @@ header .header__nav--mobile {
     font-family: "Rubik", sans-serif;
     color: white;
   }
-  header .header__nav--desktop a {
+  .hero-section .hero__header .header__nav--desktop a {
     color: inherit;
     font-size: 1.25rem;
     text-decoration: none;
   }
-  header .header__nav--desktop .active {
+  .hero-section .hero__header .header__nav--desktop .active {
     text-decoration: underline 0.2rem;
     text-underline-offset: 0.5rem;
     text-decoration-color: #ff7757;
   }
-  header .header__login {
+  .hero-section .hero__header .header__login {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -322,14 +315,14 @@ header .header__nav--mobile {
     font-family: "Rubik", sans-serif;
     color: white;
   }
-  header .header__login a {
+  .hero-section .hero__header .header__login a {
     display: flex;
     color: inherit;
     font-size: 1.25rem;
     align-items: center;
     text-decoration: none;
   }
-  header .header__login .sign-up {
+  .hero-section .hero__header .header__login .sign-up {
     background-color: #ff7757;
     border-radius: 12px;
     padding-top: 1rem;
@@ -337,46 +330,161 @@ header .header__nav--mobile {
     padding-bottom: 1rem;
     padding-right: 2rem;
   }
-  .main__title {
+  .hero-section .main__title {
     display: grid;
     grid-area: title;
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
-  .main__title h1 {
+  .hero-section .main__title h1 {
     font-size: 5.2rem;
+    line-height: 6rem;
   }
-  .main__title p {
+  .hero-section .main__title h2 {
     font-size: 1.5rem;
   }
-  .main__form {
-    margin-top: 4rem;
-    width: 86%;
+  .hero-section .main__form {
+    width: 98%;
     border-radius: 0px 1rem 1rem 0px;
     display: flex;
     justify-content: space-between;
   }
-  .main__form .form__destination {
+  .hero-section .main__form .form__destination {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  .main__form .form__person {
+  .hero-section .main__form .form__person {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  .main__form .form__check-in {
+  .hero-section .main__form .form__check-in {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  .main__form .form__check-out {
+  .hero-section .main__form .form__check-out {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  .main__form .form__book {
+  .hero-section .main__form .form__book {
     display: flex;
     flex-direction: row;
     border-radius: 0px 1rem 1rem 0px;
     gap: 1rem;
   }
+}
+
+.footer {
+  background-color: #172432;
+  height: 50vh;
+}
+
+.blog-section {
+  background-color: #f5f6f7;
+  height: 155vh;
+}
+.blog-section h1 {
+  font-size: 3rem;
+  padding: 2rem 2rem 0 2rem;
+}
+.blog-section .title--border {
+  border-bottom: 0.3rem solid #ff7757;
+  width: 7rem;
+  margin: 2rem;
+}
+.blog-section h3 {
+  margin-left: 2rem;
+}
+.blog-section img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem;
+}
+.blog-section h2 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0rem 0 2rem;
+}
+.blog-section p {
+  padding: 2rem 2rem 0 2rem;
+  line-height: 1.5rem;
+}
+.blog-section .read-more {
+  padding-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.blog-section a {
+  color: #ff7757;
+  text-decoration: none;
+}
+.blog-section .read-more .arrow {
+  height: 1.5rem;
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: #fff;
+  background-color: #172432;
+  font-family: "Rubik", sans-serif;
+}
+
+.footer--logo {
+  display: flex;
+  text-align: center;
+  height: 7rem;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.menu,
+.information,
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+  height: 20%;
+}
+
+.information-title,
+.contact-info-title,
+.social-networks-title,
+.menu-title {
+  margin: 8px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.contact-info-list,
+.information-list,
+.menu-list {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  line-height: 1.5;
+}
+
+.social-networks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 2rem 2rem 2rem;
+  justify-content: space-between;
+}
+.social-networks img {
+  height: 3rem;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.social-networks-title {
+  margin: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
