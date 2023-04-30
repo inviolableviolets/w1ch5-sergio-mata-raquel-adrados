@@ -325,7 +325,8 @@ $secondary-font: "Rubik", sans-serif;
 
   .read-more .arrow {
     height: 1.5rem;
-    fill: rgba(0, 0, 0, 0.3);
+    background-color: $primary-color;
+    padding: 0.5rem;
   }
 }
 
@@ -333,8 +334,8 @@ footer {
   display: flex;
   flex-direction: column;
   height: 100%;
-  color: #fff;
-  background-color: #172432;
+  color: white;
+  background-color: $black;
   font-family: "Rubik", sans-serif;
 }
 
@@ -345,9 +346,9 @@ footer {
   padding: 2rem 2rem 2rem 2rem;
 }
 
-.menu,
-.information,
-.contact-info {
+.footer__nav,
+.footer__info-section,
+.footer__contact-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -355,25 +356,26 @@ footer {
   height: 20%;
 }
 
-.information-title,
-.contact-info-title,
+.info-section__title,
+.contact-info__title,
 .social-networks-title,
-.menu-title {
+.nav__title {
   margin: 8px 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.contact-info-list,
-.information-list,
-.menu-list {
+.contact-info__list,
+.info-section__list,
+.nav__list {
   font-size: 1.1rem;
-  padding: 8px 0;
+  padding: 0.5rem 0;
   line-height: 1.5;
 }
 
-.social-networks {
+.social-networks__icons {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   padding: 0 2rem 2rem 2rem;
@@ -384,14 +386,19 @@ footer {
   }
 }
 
-.copyright {
+.footer__title {
   font-size: 0.7rem;
   display: flex;
   justify-content: flex-start;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  padding: 0 0 2rem 2rem;
 }
 
-.social-networks-title {
-  margin: 20px;
+.social-networks__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.twitter {
+  color: red;
 }
